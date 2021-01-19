@@ -70,6 +70,10 @@ export interface ISystemsContainer {
     execute(data?: any): void;
 }
 
+export interface ISystemContainerFactory {
+    create(entityStorage: IEntityStorage<IEntity<any>>): ISystemsContainer;
+}
+
 export interface ICrampModule<TData> {
     init(): void;
     execute<TData>(data?: TData): void;
