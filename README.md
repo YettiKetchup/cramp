@@ -7,3 +7,11 @@ Small Entity-Component-System framework for game projects. Provides a flexible a
 Easy intergation to all engines, frameworks, projects, etc. 
 
 Created by Daniil "Yetti" Stolpnik.
+
+# Installation
+
+Just copy this repo to you project. Or use one of existing intergation boilerplate for you engine.
+
+# Integration boilerplates
+
+Coming soon...
