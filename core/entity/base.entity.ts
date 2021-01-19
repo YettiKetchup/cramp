@@ -5,7 +5,10 @@ import BaseDeletingComponentBehaviour from "./entity-behaviours/base-deleting-co
 import BaseGettingComponentBehaviour from "./entity-behaviours/base-getting-component.behaviour";
 
 
-
+/**
+ * Base implementation of Entity, storing components and give access to them.
+ * You can use it raw.
+ */
 export default class BaseEntity<TComponent extends IComponent> 
     implements IEntity<TComponent>, 
     IEntityBehaviour<TComponent, IEntity<TComponent>> 
