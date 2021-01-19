@@ -76,5 +76,5 @@ export interface ISystemContainerFactory {
 
 export interface ICrampModule<TData> {
     init(): void;
-    execute<TData>(data?: TData): void;
+    execute(data?: TData): void;
 }
