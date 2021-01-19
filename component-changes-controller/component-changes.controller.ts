@@ -6,10 +6,22 @@ import { ComponentChangesWatcher, ComponentConstructor } from "../type-definitio
 
 type ComponentChanges<T, K extends keyof T> = { [P in K]: T[K] };
 
+/**
+ * Implements a simple reactivity. If you need handle component changes such as adding, deleting, 
+ * changing data - use this class. 
+ */
 export default class ComponentChangesController {
 
     private static _notifiers: ComponentChangesWatcher[] = [];
 
+    /**
+     * Attach new component to Entity and notify all subscribers.
+     * @param entity - entity to which a new component is added
+     * @param componentConstructor - contructor of attached component
+     * @param changes - optional: passing data to attached component. Type-safe.
+     * @returns - instance of attached component.
+     * @example ComponentChangesController.attach(entity, HealthComponent, {value: 100});
+     */
     public static attach<T extends Object, K extends keyof T>(
         entity: IEntity<any>, 
         componentConstructor: ComponentConstructor<T>, 
@@ -29,13 +41,21 @@ export default class ComponentChangesController {
         
     }
 
+    /**
+     * Removing existing component from Entity and notify all subscribers.
+     * @param entity - the entity from which the component is being removed.
+     * @param componentConstructor - contructor of removing component
+     * @param changes - optional: passing data to removed component. Type-safe.
+     * @returns - instance of removed component.
+     * @example ComponentChangesController.deattach(entity, HealthComponent, {value: 100});
+     */
     public static deattach<T extends Object, K extends keyof T>(
         entity: IEntity<any>, 
         componentConstructor: ComponentConstructor<T>, 
         changes?: ComponentChanges<T, K>
     ): T {
 
-        const notifiers = this._getNotifiers(componentConstructor, ComponentEvent.ATTACH);
+        const notifiers = this._getNotifiers(componentConstructor, ComponentEvent.DEATTACH);
         if(!notifiers) return;
 
         const component = entity.remove(componentConstructor);
@@ -48,10 +68,18 @@ export default class ComponentChangesController {
 
     }
 
+    /**
+     * Changing data in existing component and notify all subscribers.
+     * @param entity - the entity from which the component data is being changed.
+     * @param componentConstructor - contructor of changing component
+     * @param changes - passing data to changed component. Type-safe.
+     * @returns - instance of changed component.
+     * @example ComponentChangesController.change(entity, HealthComponent, {value: 100});
+     */
     public static change<T extends Object, K extends keyof T>(
         entity: IEntity<any>, 
         componentConstructor: ComponentConstructor<T>, 
-        changes?: ComponentChanges<T, K>
+        changes: ComponentChanges<T, K>
     ): void {
 
         const notifiers = this._getNotifiers(componentConstructor, ComponentEvent.CHANGE);
@@ -66,10 +94,30 @@ export default class ComponentChangesController {
 
     }
 
+    /**
+     * Subscribe for component changes such as adding, deleting, changing data.
+     * @param condition - condition object. You can specify which component to watch in certain entities.
+     * @example ComponentChangesController.subscribe({ 
+     *  component: HealthComponent,
+     *  in: [PlayerComponent],
+     *  on: ComponentEvent.CHANGE,
+     *  execute: () => {}
+     * })
+     */
     public static subscribe(condition: ComponentChangesWatcher): void {
         this._notifiers.push(condition);
     }
 
+    /**
+     * Unsubscribe for component changes such as adding, deleting, changing data.
+     * @param condition - condition object. You can specify which component to watch in certain entities.
+     * @example ComponentChangesController.unsubscribe({ 
+     *  component: HealthComponent,
+     *  in: [PlayerComponent],
+     *  on: ComponentEvent.CHANGE,
+     *  execute: () => {}
+     * })
+     */
     public static unsubscribe(condition: ComponentChangesWatcher): void {
         const index = this._notifiers.indexOf(condition);
         if(index === -1) return;
