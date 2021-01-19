@@ -15,7 +15,7 @@ type SystemQueueItem = {
     exclude?: ComponentConstructor<any>[]
 }
 
-export default class SystemsContainer implements ISystemsContainer {
+export default class SystemsContainer<TData> implements ISystemsContainer<TData> {
 
     private static _globalSystemPool: TSystem[] = [];
     private _queue: SystemQueueItem[] = [];
@@ -33,7 +33,7 @@ export default class SystemsContainer implements ISystemsContainer {
         return system;
     }
 
-    public add(systemConstructor: SystemConstructor): ISystemsContainer {
+    public add(systemConstructor: SystemConstructor): ISystemsContainer<TData> {
         const system: TSystem = SystemsContainer.getSystemFromGlobalPool(systemConstructor);
         const decorators: TSystem[] = [];
         const sleepTime = 0;
@@ -46,7 +46,7 @@ export default class SystemsContainer implements ISystemsContainer {
         return this;
     }
 
-    public decorate(...systemConstructors: SystemConstructor[]): ISystemsContainer {
+    public decorate(...systemConstructors: SystemConstructor[]): ISystemsContainer<TData> {
         for(let i = 0; i < systemConstructors.length; i++) {
             const decorator = SystemsContainer.getSystemFromGlobalPool(systemConstructors[i]);
             this._queue[this._queueIndex].decorators.push(decorator);
@@ -55,22 +55,22 @@ export default class SystemsContainer implements ISystemsContainer {
         return this;
     }
 
-    public sleep(time: number): ISystemsContainer {
+    public sleep(time: number): ISystemsContainer<TData> {
         this._queue[this._queueIndex].sleepTime = time;
         return this;
     }
 
-    public include(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer {
+    public include(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer<TData> {
         this._queue[this._queueIndex].include.push(...componentsConstructor);
         return this;
     }
 
-    public exclude(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer {
+    public exclude(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer<TData> {
         this._queue[this._queueIndex].exclude.push(...componentsConstructor);
         return this;
     }
 
-    public execute(data?: any): void {
+    public execute(data?: TData): void {
         if(this._executionIndex >= this._queue.length) {
             this._executionIndex = 0;
             return;

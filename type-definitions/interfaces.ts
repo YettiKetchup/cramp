@@ -61,17 +61,17 @@ export interface IEntityStorage<TEntity extends IEntity<any>> {
     getByComponents(components: ComponentFilter): TEntity[];
 }
 
-export interface ISystemsContainer {
-    add(systemConstructor: SystemConstructor): ISystemsContainer;
-    decorate(...systemConstructors: SystemConstructor[]): ISystemsContainer;
-    sleep(time: number): ISystemsContainer;
-    include(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer;
-    exclude(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer;
-    execute(data?: any): void;
+export interface ISystemsContainer<TData> {
+    add(systemConstructor: SystemConstructor): ISystemsContainer<TData>;
+    decorate(...systemConstructors: SystemConstructor[]): ISystemsContainer<TData>;
+    sleep(time: number): ISystemsContainer<TData>;
+    include(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer<TData>;
+    exclude(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer<TData>;
+    execute(data?: TData): void;
 }
 
 export interface ISystemContainerFactory {
-    create(entityStorage: IEntityStorage<IEntity<any>>): ISystemsContainer;
+    create(entityStorage: IEntityStorage<IEntity<any>>): ISystemsContainer<any>;
 }
 
 export interface ICrampModule<TData> {
