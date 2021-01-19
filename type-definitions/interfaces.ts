@@ -69,3 +69,8 @@ export interface ISystemsContainer {
     exclude(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer;
     execute(data?: any): void;
 }
+
+export interface ICrampModule<TData> {
+    init(): void;
+    execute<TData>(data?: TData): void;
+}
