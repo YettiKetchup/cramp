@@ -9,7 +9,7 @@ import { ComponentFilter } from "../../type-definitions/types";
 export default abstract class BaseSystem<TData, TEntity extends IEntity<any>> implements ISystem<TData, TEntity> {
     
     private _subsystem: ISystem<any, TEntity> = null;
-    protected componentFilter: ComponentFilter = { include: [] };
+    protected readonly componentFilter: ComponentFilter = { include: [] };
 
     /**
      * Child Systems if you want use System as decorator.
