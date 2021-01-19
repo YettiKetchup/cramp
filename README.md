@@ -1,4 +1,4 @@
-# cramp
+# Cramp
 
 ![alt text](https://i.ibb.co/FDqDk98/cramp-logo-small.png)
 ![alt text](https://i.ibb.co/WzcNHcP/ds-logo-small.png)
