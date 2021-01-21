@@ -31,11 +31,26 @@ Cramp - это небольшой игровой фреймворк имплем
 
 ```
 class HealthComponent {
-	value: number = 100;
+	public value: number = 100;
 }
 
 class MaxHealthComponent {
-	value: number = 100;
+	public value: number = 100;
+}
+```
+
+Но существует и такой вариант, что Компонент может оставаться пустым и служить чем-то в роли тега для Сущности. Например, чтобы определить Сущность игрока, нам не нужно создавать поле isPlayer в компоненте PlayerComponent. Мы можем оставить его пустым.
+
+Неправильно:
+```
+class PlayerComponent {
+	public isPlayer:boolean = true; 
+}
+
+Правильно:
+```
+class PlayerComponent {
+
 }
 ```
 
