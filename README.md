@@ -99,3 +99,51 @@ health.value -= 10;
 const playerObject = entity.node;
 playerObject.position.x = 10;
 ```
+
+# Системы
+
+Системы
+
+Если Компоненты и Сущности отвечают за данные в игровых приложениях, то Системы - за логику. Все манипуляции с данными и игровыми объектами производятся в Системах. 
+
+Каждая Система состоит из двух публичных методов - фильтрации и исполнения. Метод фильтрации возвращает специальный объект фильтра по которому Система получает нужные Сущности. В специальном объекте фильтрации указываются Компоненты, которые должны быть у Сущности, чтобы она попала в работу к Системе. Опционально можно указать компоненты, которых не должно быть у Сущности, чтобы она попала на обработку в Систему. Если помимо запрашиваемых Компонентов у Системы будут еще какие-нибудь, она все равно пройдет проверку и будет доступна для обработки в Системе. Объект фильтрации присваивается защищенному свойству componentFilter, доступному во всех Системах.
+
+В данном примере объект фильтрации говорит фреймворку “Дай этой Системе все Сущности у которых есть Компоненты PlayerComponent и HealthComponent”:
+```
+class DecreasePlayerHealthSystem extends BaseSystem {
+	componentFilter: ComponentFilter = {
+		include: [PlayerComponent, HealthComponent]
+}
+}
+```
+
+А это пример с исключением. Мы просим у Фреймворка все Сущности у которых есть Компоненты PlayerComponent и HealthComponent, но нет Компонента IsDeadComponent:
+```
+class DecreasePlayerHealthSystem extends BaseSystem {
+	componentFilter: ComponentFilter = {
+		include: [PlayerComponent, HealthComponent],
+		exclude: [IsDeadComponent]
+}
+}
+```
+
+Поле exclude является опциональным и зачастую используется в декораторах о которых речь пойдет в разделе описывающем Контейнеры.
+
+После получения всех Сущностей удовлетвояющих условия фильтра, выполняется запуск Системы. А точнее, вызов метода execute(), в который мы также можем передать дополнительные данные:
+```
+class DecreasePlayerHealthSystem extends BaseSystem {
+	componentFilter: ComponentFilter = {
+		include: [PlayerComponent, HealthComponent, HasDamageComponent]
+  }
+
+  execute(entities: IEntity[], data?: any): void {
+	  for(let i = 0; i < entities.length; i++) {
+		  const healthComponent: HealthComponent = entities[i].get(HealthComponent);
+		  const hasDamageComponent: HasDamageComponent = entities[i].get(HasDamageComponent)
+		  healthComponent.value -= hasDamageComponent.value;
+    }
+  }
+}
+```
+
+Важно понимать, что метод execute() отработает в любом случае, вне зависимости от результатов фильтрации. Также, стоит помнить, что пустой массив в после include без указания exclude вернет все Сущности, находящиеся в Хранилище в данный момент. Сделано это для гибкости и возможности расширения фильтра через Системы-Декораторы. 
