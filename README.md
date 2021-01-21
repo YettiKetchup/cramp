@@ -74,9 +74,8 @@ const component = player.remove(InvicibleComponent)
 
 Пример получения Компонента из Сущности:
 ```
-if(player.get(HealthComponent)) {
-	//...do something
-}
+const health = player.get(HealthComponent);
+health.value -= 10;
 ```
 
 # Installation
