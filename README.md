@@ -123,7 +123,7 @@ class DecreasePlayerHealthSystem extends BaseSystem {
 	componentFilter: ComponentFilter = {
 		include: [PlayerComponent, HealthComponent],
 		exclude: [IsDeadComponent]
-}
+  }
 }
 ```
 
