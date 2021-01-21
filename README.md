@@ -165,18 +165,18 @@ container.add(ExampleSystemThree)
 Допустим, у нас есть Система отвечающая за нанесение урона игровым персонажам:
 ```
 class DecreaseHealthSystem extends BaseSystem {
-	protected componentFilter: ComponentFilter = {
-		include: [HealthComponent, HasDamageComponent]
-}
+  protected componentFilter: ComponentFilter = {
+    include: [HealthComponent, HasDamageComponent]
+  }
 
-public execute(entities: IEntity): void {
-	for(let i = 0; i < entities.length; i++) {
-	const health = entities[i].get(HealthComponent);
-	const damage = entities[i].get(DamageComponent);
+  public execute(entities: IEntity): void {
+	  for(let i = 0; i < entities.length; i++) {
+	    const health = entities[i].get(HealthComponent);
+	    const damage = entities[i].get(DamageComponent);
 
-	health.value -= damage.component;
-}
-} 
+	    health.value -= damage.component;
+    }
+  } 
 }
 ```
 
@@ -206,7 +206,7 @@ class DecoratorSystem extends BaseSystem {
 	public execute(entities: IEntity): void {
 		console.log(‘Hello System Decorator’);
 		this.subsystem.execute(entities);
-}
+  }
 }
 
 // ...Где-то в Контейнере
@@ -223,4 +223,26 @@ container.add(DecreaseHealthSystem).decorate(DecoratorSystem)
 ```
 container.add(ExampleSystemOne).sleep(1000) // Выполняется мгновенно
 container.add(ExampleSystemTwo) // Выполнится через секунду
+```
+
+# Хранилище Сущностей
+
+В Cramp существует механизм хранения Сущностей. К Хранилищам осуществляется доступ из Контейнера для выборки и передачи Сущностей Системам. Рекомендуется использовать несколько Хранилищ для оптимизации производительности. Например, игровые объекты в одном, элементы интерфейса в другом, статические объекты в третьем и так далее.При необходимости, Хранилища могут быть скомбинированны, если вдруг какой-то Контейнер работает и с Сущностями интерфейса и с Сущностями игровых объектов. 
+
+Пример создания Хранилища, добавления Сущностей и получения экземпляра хранилища для Контейнера:
+```
+const gameObjectsStorage = GlobalEntitiesStorage.create(‘GameObjects’);
+gameObjectsStorage.add(playerEntity);
+
+const container = new SystemsContainer(GlobalEntitiesStorage.get(‘‘GameObjects’’));
+```
+
+Пример комбинирования Хранилищ:
+```
+const gameObjectsStorage = GlobalEntitiesStorage.create(‘GameObjects’);
+const uiObjectsStorage = GlobalEntitiesStorage.create(‘UiObjects’);
+
+const gameUiCombined = GlobalEntitiesStorage.combine(‘UiGameObjects’’, [‘GameObjects’, ‘‘UiObjects’’])
+
+const gameUiContainer = new SystemsContainer(gameUiCombined);
 ```
