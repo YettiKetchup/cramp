@@ -13,7 +13,7 @@ Cramp - это небольшой игровой фреймворк имплем
 
 Просто скопируйте этот репозиторий в свой проект. Или воспользуйтесь одним из интеграционных бойлерплейтов. 
 
-# Integration boilerplates
+# Интеграционные бойлерплейты
 
 CocosCreator 2x - https://github.com/YettiKetchup/cc-cramp-boilerplate
 
