@@ -46,6 +46,7 @@ class MaxHealthComponent {
 class PlayerComponent {
 	public isPlayer:boolean = true; 
 }
+```
 
 Правильно:
 ```
