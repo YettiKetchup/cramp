@@ -78,3 +78,10 @@ export interface ICrampModule<TData> {
     init(): void;
     execute(data?: TData): void;
 }
+
+export interface IEntityCacheController {
+    cache: Map<string, IEntity<any>>;
+    add(key: string, entity: IEntity<any>): void;
+    get(key: string): IEntity<any>;
+    clear(): void;
+}
