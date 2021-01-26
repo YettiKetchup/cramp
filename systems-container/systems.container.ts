@@ -99,6 +99,7 @@ export default class SystemsContainer<TData> implements ISystemsContainer<TData>
         const executedSystem = this._setupDecorators(this._queue[index]);
         const entities: IEntity<any>[] = this._entityStorage.getByComponents(executedSystem.filter());
 
+        executedSystem.storage = this._entityStorage;
         executedSystem.execute(entities, data);
     }
 
