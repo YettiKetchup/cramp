@@ -42,6 +42,7 @@ export interface INodeEntity<TComponent extends IComponent, TNode extends Object
 
 export interface ISystem<TData, TEntity extends IEntity<any>> {
     subsystem: ISystem<any, TEntity>;
+    storage: IEntityStorage<TEntity>;
 
     filter(): ComponentFilter;
     execute(entities: TEntity[], data?: TData): void | Promise<any>;

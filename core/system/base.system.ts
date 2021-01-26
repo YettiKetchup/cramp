@@ -1,4 +1,4 @@
-import { IEntity, ISystem } from "../../type-definitions/interfaces";
+import { IEntity, IEntityStorage, ISystem } from "../../type-definitions/interfaces";
 import { ComponentFilter } from "../../type-definitions/types";
 
 
@@ -9,6 +9,7 @@ import { ComponentFilter } from "../../type-definitions/types";
 export default abstract class BaseSystem<TData, TEntity extends IEntity<any>> implements ISystem<TData, TEntity> {
     
     private _subsystem: ISystem<any, TEntity> = null;
+    private _storage: IEntityStorage<TEntity> = null;
     protected readonly componentFilter: ComponentFilter = { include: [] };
 
     /**
@@ -16,6 +17,13 @@ export default abstract class BaseSystem<TData, TEntity extends IEntity<any>> im
      */
     public get subsystem(): ISystem<any, TEntity> { return this._subsystem };
     public set subsystem(value: ISystem<any, TEntity>) { this._subsystem = value; }
+
+
+    /**
+     * Acces to EntityStorage used by SystemsContainer
+     */
+    public get storage(): IEntityStorage<TEntity> { return this._storage; }
+    public set storage(value: IEntityStorage<TEntity>) { this._storage = value; }
     
     /**
      * Request a Entities by ComponentFilter;
