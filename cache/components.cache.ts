@@ -1,9 +1,9 @@
-import { IEntity } from "../type-definitions/interfaces";
+import { IComponentsCache, IEntity } from "../type-definitions/interfaces";
 import { ComponentConstructor } from "../type-definitions/types";
 
 
 
-export default class ComponentCacheController<TComponent extends Object> {
+export default class ComponentsCache<TComponent extends Object> implements IComponentsCache<TComponent> {
 
     private _components: TComponent[] = [];
 
@@ -31,7 +31,6 @@ export default class ComponentCacheController<TComponent extends Object> {
         const index: number = this._components.indexOf(component);
 
         this._components.splice(index, 1);
-
         entity.add(componentConstructor);
 
         return component;

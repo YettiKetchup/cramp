@@ -1,5 +1,5 @@
-import { IEntity, IEntityCacheController } from "../type-definitions/interfaces";
-import EntityCacheController from "./entity-cache.controller";
+import { IEntitiesCache, IEntity, IEntityStorage } from "../type-definitions/interfaces";
+import EntitiesCache from "./entities.cache";
 
 
 
@@ -7,10 +7,9 @@ import EntityCacheController from "./entity-cache.controller";
  * Simple deleted Entities storage. 
  * Use it dor caching memory, if you want reuse some entity in a future.
  */
-export default class StaticEntityCacheController {
+export default class EntitiesGlobalCache {
 
-    private static readonly _cache: Map<string, IEntity<any>> = new Map();
-    private static readonly _cacheController: IEntityCacheController = new EntityCacheController();
+    private static readonly _cacheController: IEntitiesCache = new EntitiesCache();
 
     /**
      * Getter for cached Entities Storge. 
@@ -26,16 +25,16 @@ export default class StaticEntityCacheController {
      * @param key - key of stored Entity. Use this key to get Entity from pool in a future.
      * @param entity - instance of removed Entity.
      */
-    public static add(key: string, entity: IEntity<any>): void {
-        this._cacheController.add(key, entity);
+    public static addToCache(key: string, entity: IEntity<any>, entityStorage: IEntityStorage<IEntity<any>>): void {
+        this._cacheController.addToCache(key, entity, entityStorage);
     }
 
     /**
      * Return an Entity, make it active, and remove from cache.
      * @param key - the key under which the Entity is stored.
      */
-    public static get(key: string): IEntity<any> {
-        return this._cacheController.get(key);
+    public static removeFromCache(key: string, entityStorage: IEntityStorage<IEntity<any>>): IEntity<any> {
+        return this._cacheController.removeFromCache(key, entityStorage);
     }
 
     /**
