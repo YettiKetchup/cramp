@@ -80,6 +80,13 @@ export interface ICrampModule<TData> {
     execute(data?: TData): void;
 }
 
+export interface IComponentCacheController<TComponent extends Object> {
+    components: TComponent[];
+    addToCache(entity: IEntity<TComponent>, componentConstructor: ComponentConstructor<TComponent>): TComponent;
+    removeFromCache<KComponent extends TComponent>(entity: IEntity<TComponent>, componentConstructor: ComponentConstructor<KComponent>): KComponent;
+    clear(): void;
+}
+
 export interface IEntityCacheController {
     cache: Map<string, IEntity<any>>;
     add(key: string, entity: IEntity<any>): void;
