@@ -80,10 +80,10 @@ export interface ICrampModule<TData> {
     execute(data?: TData): void;
 }
 
-export interface IComponentsCache<TComponent extends Object> {
+export interface IComponentsCache<TComponent extends IComponent> {
     components: TComponent[];
-    addToCache(entity: IEntity<TComponent>, componentConstructor: ComponentConstructor<TComponent>): TComponent;
-    removeFromCache<KComponent extends TComponent>(entity: IEntity<TComponent>, componentConstructor: ComponentConstructor<KComponent>): KComponent;
+    addToCache(component: TComponent): void;
+    removeFromCache<KComponent extends TComponent>(componentConstructor: ComponentConstructor<KComponent>): KComponent; 
     clear(): void;
 }
 
