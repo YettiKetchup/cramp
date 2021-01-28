@@ -1,3 +1,4 @@
+import { CrampErrorCode, CrampErrorMessage } from "../type-definitions/errors";
 import { IComponent, IComponentsCache, IEntity } from "../type-definitions/interfaces";
 import { ComponentConstructor } from "../type-definitions/types";
 
@@ -10,28 +11,25 @@ export default class ComponentsCache<TComponent extends IComponent> implements I
     public get components(): TComponent[] { return this._components; }
 
     /**
-     * Remove Component from Entity and adds it to Cache.
-     * @param entity - the entity from which the component is removed
-     * @param componentConstructor - the constructor of the component to be removed 
+     * Add Component instance to Cache.
+     * @param component - instance of Component.
      */
-    public addToCache(entity: IEntity<TComponent>, componentConstructor: ComponentConstructor<TComponent>): TComponent {
-        const component: TComponent = entity.remove(componentConstructor);
+    public addToCache(component: TComponent): void {
         this._components.push(component);
-
-        return component;
     }
 
     /**
-     * Remove Component from Cache and adds it to Entity.
-     * @param entity - the Entity to which the Component is added
-     * @param componentConstructor - the constructor of the component to be added
+     * Remove Component from Cache and returned it.
+     * @param componentConstructor - the constructor of the component to be added.
+     * @returns instance of Component
      */
-    public removeFromCache<KComponent extends TComponent>(entity: IEntity<TComponent>, componentConstructor: ComponentConstructor<KComponent>): KComponent {
+    public removeFromCache<KComponent extends TComponent>(componentConstructor: ComponentConstructor<KComponent>): KComponent {
         const component: KComponent = this._components.find(c => c instanceof componentConstructor) as KComponent;
-        const index: number = this._components.indexOf(component);
 
+        if(!component) throw new Error(CrampErrorMessage.get(CrampErrorCode.COMPONENT_NOT_FOUND_IN_CACHE));
+
+        const index: number = this._components.indexOf(component);
         this._components.splice(index, 1);
-        entity.add(componentConstructor);
 
         return component;
     }
