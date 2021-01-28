@@ -82,6 +82,7 @@ export interface ISystemContainerFactory {
 export interface ICrampModule<TData> {
     init(): void;
     execute(data?: TData): void;
+    destroy(): void;
 }
 
 export interface IComponentsCache<TComponent extends IComponent> {
