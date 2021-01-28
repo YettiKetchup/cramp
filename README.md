@@ -10,29 +10,29 @@ Cramp - это небольшой игровой фреймворк имплем
 
 
 # Содержание
-1. [Для каких проектов и кому подойдет Cramp](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B4%D0%BB%D1%8F-%D0%BA%D0%B0%D0%BA%D0%B8%D1%85-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B8-%D0%BA%D0%BE%D0%BC%D1%83-%D0%BF%D0%BE%D0%B4%D0%BE%D0%B9%D0%B4%D0%B5%D1%82-cramp)
+1. [Для каких проектов и кому подойдет Cramp](https://github.com/YettiKetchup/cramp#%D0%B4%D0%BB%D1%8F-%D0%BA%D0%B0%D0%BA%D0%B8%D1%85-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B8-%D0%BA%D0%BE%D0%BC%D1%83-%D0%BF%D0%BE%D0%B4%D0%BE%D0%B9%D0%B4%D0%B5%D1%82-cramp)
 
-2. [Установка](https://github.com/YettiKetchup/cramp/tree/dev#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0)
+2. [Установка](https://github.com/YettiKetchup/cramp#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0)
 
-3. [Интеграционные бойлерплейты](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B1%D0%BE%D0%B9%D0%BB%D0%B5%D1%80%D0%BF%D0%BB%D0%B5%D0%B9%D1%82%D1%8B)
+3. [Интеграционные бойлерплейты](https://github.com/YettiKetchup/cramp#%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B1%D0%BE%D0%B9%D0%BB%D0%B5%D1%80%D0%BF%D0%BB%D0%B5%D0%B9%D1%82%D1%8B)
 
-4. [Компоненты](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B)
+4. [Компоненты](https://github.com/YettiKetchup/cramp#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B)
 
-5. [Сущности](https://github.com/YettiKetchup/cramp/tree/dev#%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8)
+5. [Сущности](https://github.com/YettiKetchup/cramp#%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8)
 
-6. [Системы](https://github.com/YettiKetchup/cramp/tree/dev#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B)
+6. [Системы](https://github.com/YettiKetchup/cramp#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B)
 
-7. [Системы-декораторы](https://github.com/YettiKetchup/cramp/tree/dev#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B)
+7. [Системы-декораторы](https://github.com/YettiKetchup/cramp#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B)
 
-8. [Хранилища Сущностей](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
+8. [Хранилища Сущностей](https://github.com/YettiKetchup/cramp#%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
 
-9. [Контейнеры Систем](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
+9. [Контейнеры Систем](https://github.com/YettiKetchup/cramp#%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
 
-10. [Реакция на изменения Компонентов](https://github.com/YettiKetchup/cramp/tree/dev#%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
+10. [Реакция на изменения Компонентов](https://github.com/YettiKetchup/cramp#%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
 
-11. [Модули](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B8)
+11. [Модули](https://github.com/YettiKetchup/cramp#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B8)
 
-12. [Так как же это все работает](https://github.com/YettiKetchup/cramp/tree/dev#%D1%82%D0%B0%D0%BA-%D0%BA%D0%B0%D0%BA-%D0%B6%D0%B5-%D1%8D%D1%82%D0%BE-%D0%B2%D1%81%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82)
+12. [Так как же это все работает](https://github.com/YettiKetchup/cramp#%D1%82%D0%B0%D0%BA-%D0%BA%D0%B0%D0%BA-%D0%B6%D0%B5-%D1%8D%D1%82%D0%BE-%D0%B2%D1%81%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82)
 
 
 # Для каких проектов и кому подойдет Cramp
