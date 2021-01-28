@@ -40,6 +40,10 @@ export interface INodeEntity<TComponent extends IComponent, TNode extends Object
     node: TNode;
 }
 
+export interface IEntityFactory<TComponent extends IComponent, TEntity extends IEntity<TComponent>, TData> {
+    create(id: string, data?: TData): TEntity;
+}
+
 export interface ISystem<TData, TEntity extends IEntity<any>> {
     subsystem: ISystem<any, TEntity>;
     storage: IEntityStorage<TEntity>;
