@@ -488,3 +488,103 @@ component: HasDamageComponent,
 Данный блок кода можно читать как: Когда к одной из Сущностей с Компонентами PlayerComponent и HealthComponent добавится Компонент HasDamageComponent запусти работу Контейнера HasDamageContainer. То есть, как только мы в одной из Систем, использующих в своей работе Сущность с набором Компонентов PlayerComponent и HealthComponent, вызовем метод attach() у ComponentChangesController и передадим туда HasDamageComponent, сработает событие и обработчик его подхватит.
 
 Таким образом, мы можем запускать работу Контейнеров. 
+
+
+# Так как же это все работает
+
+Порядок выполнения достаточно простой и последовательный и един для всех кейсов:
+
+- Инциируется некоторое событие. Это может быть как ответ от сервера, нажатие клавиши клавиатуры, тач-событие, так и реакция на изменения в Компонентах.
+
+- Запускается Контейнер, который последовательно начинает выполнять все установленные в нем Системы с учетом всех декораторов.
+
+- Как только Контейнер начал выполнять Систему, он передает ее фильтр Хранилищу Сущностей, получает все найденные Сущности и выполняет Систему.
+
+- Идет выполнение самой Системы, если условия фильтрации были удовлетворены. Однако, Система в любом случае выполнится хотя бы раз!
+
+- Как только Система закончила свое выполнение, Контейнер переходит к выполнению другой Системы и так до конца.
+
+- Как только все Системы в Контейнеры выполнены, Контейнер завершает свою работу, сбрасывая свое состояние до изначального, что позволяет использовать его еще раз.
+
+## Простой пример
+
+Для наглядности ниже приведен пример создания приложения в одном файле. В примере будет создано два объекта, которые будут двигатся с разной скоростью по нажатию на клавиши управления.
+
+Создание классов Компонентов:
+```
+class SpeedComponent implements IComponent {
+	x: number = 0;
+	y: number = 0;
+
+	constructor(x: number, y: number) {
+		this.x = x;
+		this.y = y;
+	}
+}
+
+class PositionComponent implements IComponent {
+	x: number = 0;
+	y: number = 0;
+}
+```
+
+Создание класса Системы:
+```
+
+type MovementDelta = {
+	x: number,
+	y: number
+}
+
+class MovementSystem extends BaseSystem<MovementDelta, IEntity<IComponent>> {
+
+	protected readonly componentFilter: ComponentFilter = {
+		include: [SpeedComponent, PositionComponent]
+	}
+
+	public execute(entities: IEntity<IComponent>, delta: MovementDelta): void {
+		for(let i = 0; i < entities.length; i++) {
+			const speed: SpeedComponent = entities[i].get(SpeedComponent);
+			const position: PositionComponent = entities[i].get(PositionComponent);
+
+			position.x += speed.x * delta.x;
+			position.y += speed.y * delta.y;
+		}
+	}
+
+}
+```
+
+Теперь инициализируем приложение:
+```
+// Создадим Хранилище
+const entityStorage: IEntityStorage<IEntity<IComponent>> = GlobalEntitiesStorage.create('Game');
+
+// Создадим Сущности машин инаделим их нужными Компонентами
+const carOne = new Entity('car_1');
+carOne.components.push([new SpeedComponent(1, 0), new PositionComponent()]);
+
+const carTwo = new Entity('car_2');
+carTwo.components.push([new SpeedComponent(2, 0), new PositionComponent()]);
+
+// Добавим Сущности в Контейнер
+entityStorage.add(carOne, carTwo);
+
+//Создадим Контейнер, передадим в него Хранилище с Сущностями и установим Систему для выполнения.
+const carMovedContainer: ISystemsContainer<MovementDelta> = new SystemsContainer(entityStorage)
+carMovedContainer.add(MovementSystem)
+
+// Повесим обработчик событий на нажатие клавиш и создадим объект дельты направления движения,
+// который будем передавать Системе через Контейнер
+
+document.addEventListener('keydown', event => {
+	const movementDelta: MovementDelta = {x: 0, y: 0}
+
+	if(event.key === 'ArrowLeft') movementDelta.x = 1;
+	if(event.key === 'ArrowRight') movementDelta.x = -1;
+
+	carMovedContainer.execute(movementDelta);
+}, false);
+```
+
+Вот и все. Создание более крупных и сложных приложений нчием не отличается от того, что было показано в примере. Разумеется, необходимо пользоваться Фабриками, не забывать про разделения Хранилищь, кэшировании, принципах проектирования, однако все это достаточн оподробно расписано в документации выше. 
