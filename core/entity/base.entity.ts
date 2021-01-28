@@ -1,8 +1,11 @@
-import { IComponent, IEntity, IEntityBehaviour, IEntityComponentManipulationBehaviour } from "../../type-definitions/interfaces";
+import ComponentsCache from "../../cache/components.cache";
+import { IComponent, IComponentsCache, IEntity, IEntityBehaviour, IEntityComponentManipulationBehaviour } from "../../type-definitions/interfaces";
 import { ComponentConstructor } from "../../type-definitions/types";
 import BaseAddingComponentBehaviour from "./entity-behaviours/base-adding-component.behaviour";
 import BaseDeletingComponentBehaviour from "./entity-behaviours/base-deleting-component.behaviour";
 import BaseGettingComponentBehaviour from "./entity-behaviours/base-getting-component.behaviour";
+import CachedComponentsAddingComponentBehaviour from "./entity-behaviours/cached-components-adding-component.behaviour";
+import CachedComponentsDeletingComponentBehaviour from "./entity-behaviours/cached-components-deleting-component.behaviour";
 
 
 /**
@@ -18,14 +21,16 @@ export default class BaseEntity<TComponent extends IComponent>
     private _components: TComponent[] = [];
     private _isActive: boolean = true;
 
+    private _componentsCache: IComponentsCache<TComponent> = null;
+
     private _componentGettingBehaviour: IEntityComponentManipulationBehaviour<TComponent, IEntity<TComponent>> 
         = new BaseGettingComponentBehaviour();
 
     private _componentAddingBehaviour: IEntityComponentManipulationBehaviour<TComponent, IEntity<TComponent>> 
-        = new BaseAddingComponentBehaviour();
+        = new CachedComponentsAddingComponentBehaviour(this._componentsCache);
 
     private _componentDeletingBehaviour: IEntityComponentManipulationBehaviour<TComponent, IEntity<TComponent>> 
-        = new BaseDeletingComponentBehaviour();
+        = new CachedComponentsDeletingComponentBehaviour(this._componentsCache);
 
     public get uuid(): string { return this._uuid; }
     public get components(): TComponent[] { return this._components; }
@@ -68,8 +73,14 @@ export default class BaseEntity<TComponent extends IComponent>
         this._componentDeletingBehaviour = value; 
     }
 
-    constructor(uuid: string) {
+    constructor(uuid: string, componentsCache?: ComponentsCache<TComponent>) {
         this._uuid = uuid;
+        this._componentsCache = componentsCache;
+
+        if(!this._componentsCache) {
+            this._componentAddingBehaviour = new BaseAddingComponentBehaviour();
+            this._componentDeletingBehaviour = new BaseDeletingComponentBehaviour();
+        }
     }
 
     /**
