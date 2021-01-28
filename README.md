@@ -30,7 +30,9 @@ Cramp - это небольшой игровой фреймворк имплем
 
 10. [Реакция на изменения Компонентов](https://github.com/YettiKetchup/cramp/tree/dev#%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
 
-11. [Так как же это все работает](https://github.com/YettiKetchup/cramp/tree/dev#%D1%82%D0%B0%D0%BA-%D0%BA%D0%B0%D0%BA-%D0%B6%D0%B5-%D1%8D%D1%82%D0%BE-%D0%B2%D1%81%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82)
+11. [Модули](https://github.com/YettiKetchup/cramp/tree/dev#%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
+
+12. [Так как же это все работает](https://github.com/YettiKetchup/cramp/tree/dev#%D1%82%D0%B0%D0%BA-%D0%BA%D0%B0%D0%BA-%D0%B6%D0%B5-%D1%8D%D1%82%D0%BE-%D0%B2%D1%81%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82)
 
 
 # Для каких проектов и кому подойдет Cramp
@@ -513,6 +515,53 @@ component: HasDamageComponent,
 
 Таким образом, мы можем запускать работу Контейнеров. 
 
+# Модули
+
+Во избежание бардака из огромной кучи Компонентов, Систем, Контейнеров и прочего, фреймворк предоставляет небольшое структурное решение. Пользоваться им или нет - решать пользователю, однако, простое решение поможет поддерживать порядок в коде и упростит переносимость функционала из проекта в проект. 
+
+Для начала стоит определится со структурой папок, обычно выглядит модуль следующим образом:
+```
+MovementModule
+|--components
+|----speed.component.ts
+|----position.component.ts
+|--systems
+|----movement.system.ts
+|--containers
+|----move.container.ts
+|--movement.module.ts
+```
+
+Также, необзательным, но возможным есть создание точки входа в модуль. Это небольшой класс наследующий интерфейс ICrampModule, у которого есть всего два метода init() и execute(). Иногда бывает удобно создавать точку входа, создавать в ней контейнеры и подвязывать их на внутренние игровые события.
+```
+class MovementModule imlements ICrampModule<any> {
+
+	private _entityStorage: IEntityStorage<IEntity<IComponent>> = null;
+	private _moveContainer: ISystemsContainer<any> = null;
+
+	constructor(entityStorage: IEntityStorage<IEntity<IComponent>>) { 
+		this._entityStorage = entityStorage;
+	}
+
+	init() {
+		this._moveContainer = new SystemsContainer(this._entityStorage);
+	}
+
+	execute(data: any): void {
+		this._moveContainer.execute(data);
+	}
+
+}
+
+const movementModule = new MovementModule();
+movementModule.init();
+
+...
+
+movementModule.execute(data);
+```
+
+Модули могут без пробелм использовать части других Модулей. Однако, стоит это учитывать при переносе Модулей в другие проекты. Механизм внедрения зависимостей будет реализован с последующими обновлениями.
 
 # Так как же это все работает
 
