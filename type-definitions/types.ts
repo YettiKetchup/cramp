@@ -17,3 +17,15 @@ export type ComponentChangesWatcher = {
   in: ComponentConstructor<any>[],
   execute: () => void
 }
+
+export type Snapshot = {
+  key: string,
+  data: any
+}
+
+export type SnapshotsData = {
+  component: IComponent,
+  snapshots: Snapshot[]
+}
+
+export type ComponentStateReplacer = (key: string, value: string) => string;
