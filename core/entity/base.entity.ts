@@ -27,10 +27,10 @@ export default class BaseEntity<TComponent extends IComponent>
         = new BaseGettingComponentBehaviour();
 
     private _componentAddingBehaviour: IEntityComponentManipulationBehaviour<TComponent, IEntity<TComponent>> 
-        = new CachedComponentsAddingComponentBehaviour(this._componentsCache);
+        = null;
 
     private _componentDeletingBehaviour: IEntityComponentManipulationBehaviour<TComponent, IEntity<TComponent>> 
-        = new CachedComponentsDeletingComponentBehaviour(this._componentsCache);
+        = null;
 
     public get uuid(): string { return this._uuid; }
     public get components(): TComponent[] { return this._components; }
@@ -73,11 +73,16 @@ export default class BaseEntity<TComponent extends IComponent>
         this._componentDeletingBehaviour = value; 
     }
 
-    constructor(uuid: string, componentsCache?: ComponentsCache<TComponent>) {
+    constructor(uuid: string, isCached: boolean = true) {
         this._uuid = uuid;
-        this._componentsCache = componentsCache;
 
-        if(!this._componentsCache) {
+        if(isCached) {
+            this._componentsCache = new ComponentsCache();
+            this._componentAddingBehaviour = new CachedComponentsAddingComponentBehaviour(this._componentsCache);
+            this._componentDeletingBehaviour = new CachedComponentsDeletingComponentBehaviour(this._componentsCache);
+        }
+
+        else {
             this._componentAddingBehaviour = new BaseAddingComponentBehaviour();
             this._componentDeletingBehaviour = new BaseDeletingComponentBehaviour();
         }
