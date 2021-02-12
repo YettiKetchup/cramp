@@ -35,6 +35,8 @@ export default class ComponentStateController {
                 component: component, 
                 snapshots: []
             }
+
+            snapshotsData.push(snapShotDataItem);
         }
 
         let snapshot: Snapshot = snapShotDataItem.snapshots.find(snap => snap.key === snapshotId);
