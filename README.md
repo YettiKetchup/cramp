@@ -17,83 +17,83 @@
 # Содержание 
  [1. Установка](https://github.com/YettiKetchup/cramp#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0)
 
- [1.2. Интеграционные бойлерплейты](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B1%D0%BE%D0%B9%D0%BB%D0%B5%D1%80%D0%BF%D0%BB%D0%B5%D0%B9%D1%82%D1%8B)
+ [1.2. Интеграционные бойлерплейты](https://github.com/YettiKetchup/cramp#%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B1%D0%BE%D0%B9%D0%BB%D0%B5%D1%80%D0%BF%D0%BB%D0%B5%D0%B9%D1%82%D1%8B)
 
- [1.2.1. Биндинги типов в интеграциях](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B1%D0%B8%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3%D0%B8-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2-%D0%B2-%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%D1%85)
+ [1.2.1. Биндинги типов в интеграциях](https://github.com/YettiKetchup/cramp#%D0%B1%D0%B8%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3%D0%B8-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2-%D0%B2-%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F%D1%85)
 
- [2. Кратко об Entity-Component-System.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%BE-%D0%BE%D0%B1-entity-component-system)
+ [2. Кратко об Entity-Component-System.](https://github.com/YettiKetchup/cramp/#%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%BE-%D0%BE%D0%B1-entity-component-system)
 
- [2.1. Думай Компонентами, а не свойствами!](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B4%D1%83%D0%BC%D0%B0%D0%B9-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8-%D0%B0-%D0%BD%D0%B5-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0%D0%BC%D0%B8)
+ [2.1. Думай Компонентами, а не свойствами!](https://github.com/YettiKetchup/cramp/#%D0%B4%D1%83%D0%BC%D0%B0%D0%B9-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8-%D0%B0-%D0%BD%D0%B5-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0%D0%BC%D0%B8)
 
- [2.2. Логика никак не связана с объектами!](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BB%D0%BE%D0%B3%D0%B8%D0%BA%D0%B0-%D0%BD%D0%B8%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B5-%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%B0-%D1%81-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0%D0%BC%D0%B8)
+ [2.2. Логика никак не связана с объектами!](https://github.com/YettiKetchup/cramp#%D0%BB%D0%BE%D0%B3%D0%B8%D0%BA%D0%B0-%D0%BD%D0%B8%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B5-%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%B0-%D1%81-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0%D0%BC%D0%B8)
 
- [2.3. Секрет гибкости оказывается прост.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82-%D0%B3%D0%B8%D0%B1%D0%BA%D0%BE%D1%81%D1%82%D0%B8-%D0%BE%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BF%D1%80%D0%BE%D1%81%D1%82)
+ [2.3. Секрет гибкости оказывается прост.](https://github.com/YettiKetchup/cramp#%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82-%D0%B3%D0%B8%D0%B1%D0%BA%D0%BE%D1%81%D1%82%D0%B8-%D0%BE%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BF%D1%80%D0%BE%D1%81%D1%82)
 
- [3. Как устроен Cramp Framework.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%B0%D0%BA-%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD-cramp-framework)
+ [3. Как устроен Cramp Framework.](https://github.com/YettiKetchup/cramp#%D0%BA%D0%B0%D0%BA-%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD-cramp-framework)
 
- [3.1 Компоненты в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B-%D0%B2-cramp)
+ [3.1 Компоненты в Cramp.](https://github.com/YettiKetchup/cramp#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B-%D0%B2-cramp)
 
- [3.1.1. Пример создания Компонента в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-%D0%B2-cramp)
+ [3.1.1. Пример создания Компонента в Cramp.](https://github.com/YettiKetchup/cramp#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-%D0%B2-cramp)
 
- [3.1.2. Компоненты-тэги в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B-%D1%82%D1%8D%D0%B3%D0%B8-%D0%B2-cramp)
+ [3.1.2. Компоненты-тэги в Cramp.](https://github.com/YettiKetchup/cramp#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B-%D1%82%D1%8D%D0%B3%D0%B8-%D0%B2-cramp)
 
- [3.1.3. Хорошие практики при работе с Компонентами.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8)
+ [3.1.3. Хорошие практики при работе с Компонентами.](https://github.com/YettiKetchup/cramp#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8)
 
- [3.2. Сущности в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B2-cramp)
+ [3.2. Сущности в Cramp.](https://github.com/YettiKetchup/cramp#%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B2-cramp)
 
- [3.2.1. Пример создания Сущности в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B2-cramp)
+ [3.2.1. Пример создания Сущности в Cramp.](https://github.com/YettiKetchup/cramp#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B2-cramp)
 
- [3.2.2. Кэширование Компонентов в Сущности.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B2-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8)
+ [3.2.2. Кэширование Компонентов в Сущности.](https://github.com/YettiKetchup/cramp#%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B2-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8)
 
- [3.2.3. Доступ к Ноде игрового движка.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF-%D0%BA-%D0%BD%D0%BE%D0%B4%D0%B5-%D0%B8%D0%B3%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B0)
+ [3.2.3. Доступ к Ноде игрового движка.](https://github.com/YettiKetchup/cramp#%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF-%D0%BA-%D0%BD%D0%BE%D0%B4%D0%B5-%D0%B8%D0%B3%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B0)
 
- [3.2.4. Фабрики Сущностей.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B8-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
+ [3.2.4. Фабрики Сущностей.](https://github.com/YettiKetchup/cramp#%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B8-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
 
- [3.2.5. Хорошие практики при работе с Сущностями.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D1%8F%D0%BC%D0%B8)
+ [3.2.5. Хорошие практики при работе с Сущностями.](https://github.com/YettiKetchup/cramp#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D1%8F%D0%BC%D0%B8)
 
- [3.3. Хранилища Сущностей](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
+ [3.3. Хранилища Сущностей](https://github.com/YettiKetchup/cramp#%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
 
- [3.3.1. Пример использования Хранилища Сущностей.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
+ [3.3.1. Пример использования Хранилища Сущностей.](https://github.com/YettiKetchup/cramp#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
 
- [3.3.2. Создание Хранилищ через Фабрики.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B8)
+ [3.3.2. Создание Хранилищ через Фабрики.](https://github.com/YettiKetchup/cramp#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B8)
 
- [3.3.3. Комбинирование Хранилищ.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89)
+ [3.3.3. Комбинирование Хранилищ.](https://github.com/YettiKetchup/cramp#%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89)
 
- [3.3.4. Хорошие практики при работе с Хранилищами.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0%D0%BC%D0%B8)
+ [3.3.4. Хорошие практики при работе с Хранилищами.](https://github.com/YettiKetchup/cramp#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0%D0%BC%D0%B8)
 
- [3.4. Системы в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-cramp)
+ [3.4. Системы в Cramp.](https://github.com/YettiKetchup/cramp#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-cramp)
 
- [3.4.1. Пример создания Системы в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-cramp)
+ [3.4.1. Пример создания Системы в Cramp.](https://github.com/YettiKetchup/cramp#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-cramp)
 
- [3.4.2. Объект фильтрации Компонентов.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
+ [3.4.2. Объект фильтрации Компонентов.](https://github.com/YettiKetchup/cramp#%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
 
- [3.4.3. Хорошие практики при работе с Системами в Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D0%BC%D0%B8-%D0%B2-cramp)
+ [3.4.3. Хорошие практики при работе с Системами в Cramp.](https://github.com/YettiKetchup/cramp#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D0%BC%D0%B8-%D0%B2-cramp)
 
- [3.5. Контейнеры Систем.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
+ [3.5. Контейнеры Систем.](https://github.com/YettiKetchup/cramp#%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
 
- [3.5.1. Пример создания и запуска Контейнера.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B8-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0)
+ [3.5.1. Пример создания и запуска Контейнера.](https://github.com/YettiKetchup/cramp#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B8-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0)
 
- [3.5.2. Декораторы Систем.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
+ [3.5.2. Декораторы Систем.](https://github.com/YettiKetchup/cramp#%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
 
- [3.5.3. Декораторы фильтра.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0)
+ [3.5.3. Декораторы фильтра.](https://github.com/YettiKetchup/cramp#%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0)
 
- [3.5.4. Отложенный запуск Систем.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BE%D1%82%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
+ [3.5.4. Отложенный запуск Систем.](https://github.com/YettiKetchup/cramp#%D0%BE%D1%82%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC)
 
- [3.5.5. Хорошие практики при работе с Контейнерами.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D0%BC%D0%B8)
+ [3.5.5. Хорошие практики при работе с Контейнерами.](https://github.com/YettiKetchup/cramp#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D0%BC%D0%B8)
 
- [3.6. Реакция на изменение Компонентов.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
+ [3.6. Реакция на изменение Компонентов.](https://github.com/YettiKetchup/cramp#%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
 
- [3.6.1. Хорошие практики при работе с Реакциями на изменения Компонентов.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F%D0%BC%D0%B8-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
+ [3.6.1. Хорошие практики при работе с Реакциями на изменения Компонентов.](https://github.com/YettiKetchup/cramp#%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F%D0%BC%D0%B8-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
 
- [3.7. Модули Cramp.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B8-cramp)
+ [3.7. Модули Cramp.](https://github.com/YettiKetchup/cramp#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B8-cramp)
 
- [3.8. Контроль состояния Компонентов.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
+ [3.8. Контроль состояния Компонентов.](https://github.com/YettiKetchup/cramp#%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2)
 
- [4. Так как же это все работает.](https://github.com/YettiKetchup/cramp/tree/dev#%D1%82%D0%B0%D0%BA-%D0%BA%D0%B0%D0%BA-%D0%B6%D0%B5-%D1%8D%D1%82%D0%BE-%D0%B2%D1%81%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82)
+ [4. Так как же это все работает.](https://github.com/YettiKetchup/cramp#%D1%82%D0%B0%D0%BA-%D0%BA%D0%B0%D0%BA-%D0%B6%D0%B5-%D1%8D%D1%82%D0%BE-%D0%B2%D1%81%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82)
 
- [4.1. Простой пример.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80)
+ [4.1. Простой пример.](https://github.com/YettiKetchup/cramp#%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80)
 
- [4.2. Более подробные примеры.](https://github.com/YettiKetchup/cramp/tree/dev#%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B)
+ [4.2. Более подробные примеры.](https://github.com/YettiKetchup/cramp#%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B)
 
 
 # Установка
