@@ -105,7 +105,7 @@
 
 CocosCreator 2x - https://github.com/YettiKetchup/cc-cramp-boilerplate
 
-CocosCreator 3x - В процессе разработки...
+CocosCreator 3x - https://github.com/YettiKetchup/cc3-cramp-boilerplate
 
 PlayCanvas - В процессе разработки...
 
