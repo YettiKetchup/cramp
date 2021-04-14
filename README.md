@@ -776,7 +776,7 @@ class MovementModule implements ICrampModule<any> {
 
 Нередко бывает необходимо откатывать состояние определенных Компонентов, например, при взятии Компонента из кэша и передачи его Сущности. Для этих целей в версии 1.2 был добавлен специальный статический класс ComponentStateController, который умеет запоминать состояние Компонента и при необходимости, возвращать Компонент к нужному состоянию. 
 
-Для того, чтобы возвращать Компоненты к стартовому состоянию, необходимо при их создании и передачи Сущности передать методу takeSnapshot статического класса ComponentStateController:
+Для того, чтобы возвращать Компоненты к стартовому состоянию, необходимо при их создании и передачи Сущности передать методу makeSnapshot статического класса ComponentStateController:
 
 ```
 class PlayerFactory implements IEntityFactory<IComponent, IEntity<IComponent>, number> {
@@ -784,7 +784,7 @@ class PlayerFactory implements IEntityFactory<IComponent, IEntity<IComponent>, n
 		const player = new BaseEntity(id);
 		
 		const components: IComponent[] = [
-			ComponentStateController.takeSnapshot(player, new HealthComponent(data))
+			ComponentStateController.makeSnapshot(player, new HealthComponent(data))
 		];
 
 		player.components.push(...components);
@@ -794,7 +794,7 @@ class PlayerFactory implements IEntityFactory<IComponent, IEntity<IComponent>, n
 ```
 Таким образом, мы запишем стартовое состояние Компонента и сможем вернутся к нему в любой момент. Вообще-то метод takeSnapshot() принимает и третий аргумент - айди состояния. Это ключ по которому мы сможем потом обратиться к нужному состоянию Компонента. Но по умолчанию, если аргумент айди не указан, состояние запишется под ключом ‘initial’.
 
-Для того, чтобы откатить состояние Компонента к одному из записанных состояний, необходимо вызвать метод setStateBySnapshot() у статического класса ComponentStateController. Этот метод принимает ровно те же самые параметры, что и takeSnapshot(). И даже, если не укажем айди для состояния, будет взято то, которое записано под ключом ‘initial’
+Для того, чтобы откатить состояние Компонента к одному из записанных состояний, необходимо вызвать метод setStateBySnapshot() у статического класса ComponentStateController. Этот метод принимает ровно те же самые параметры, что и makeSnapshot(). И даже, если не укажем айди для состояния, будет взято то, которое записано под ключом ‘initial’
 
 
 # Так как же это все работает

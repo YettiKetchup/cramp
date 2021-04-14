@@ -17,7 +17,7 @@ export default class ComponentStateController {
         return value;
     };
 
-    public static takeSnapshot<TComponent extends IComponent>
+    public static makeSnapshot<TComponent extends IComponent>
         (entityId: string, component: TComponent, snapshotId: string = 'initial'): TComponent 
     {
 
