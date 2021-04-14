@@ -72,6 +72,7 @@ export interface ISystemsContainer<TData> {
     sleep(time: number): ISystemsContainer<TData>;
     include(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer<TData>;
     exclude(...componentsConstructor: ComponentConstructor<any>[]): ISystemsContainer<TData>;
+    pass<PData>(data: PData): ISystemsContainer<TData>;
     execute(data?: TData): void;
 }
 

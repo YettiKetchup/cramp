@@ -12,7 +12,8 @@ type SystemQueueItem = {
     decorators: TSystem[],
     sleepTime: number,
     include?: ComponentConstructor<any>[],
-    exclude?: ComponentConstructor<any>[]
+    exclude?: ComponentConstructor<any>[],
+    data?: any
 }
 
 export default class SystemsContainer<TData> implements ISystemsContainer<TData> {
@@ -70,13 +71,25 @@ export default class SystemsContainer<TData> implements ISystemsContainer<TData>
         return this;
     }
 
+    public pass<PData>(data: PData): ISystemsContainer<TData> {
+        this._queue[this._queueIndex].data = data;
+        return this;
+    }
+
     public execute(data?: TData): void {
         if(this._executionIndex >= this._queue.length) {
             this._executionIndex = 0;
             return;
         }
 
-        this._runQueue(this._executionIndex, data);
+        const isHasSomeData = (
+            this._queue[this._executionIndex].data || 
+            typeof this._queue[this._executionIndex].data == 'boolean'
+        );
+
+        let passData = isHasSomeData ? this._queue[this._executionIndex].data : data;
+
+        this._runQueue(this._executionIndex, passData);
 
         if(this._queue[this._executionIndex].sleepTime) {
             sleep(this._queue[this._executionIndex].sleepTime).then(() => {
