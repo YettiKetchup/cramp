@@ -17,8 +17,31 @@ export default class CombinedEntitiesStorage<TEntity extends IEntity<any>> imple
 
     constructor(private _storages: IEntityStorage<TEntity>[]) {}
 
+    /**
+     * NOT IMPLEMENTED! 
+     * If you want add new entity to storage, add to concrette storage, not to combined!
+     */
     add(...entity: TEntity[]): void {}
-    remove(entity: TEntity): TEntity { return null; }
+
+    /**
+     * 
+     * @param entity - The Entity to remove.
+     * @returns - Deleted Entity.
+     * 
+     * Remove Entity from original storage. 
+     */
+    remove(entity: TEntity): TEntity {
+        for(let i = 0; i < this._storages.length; i++) {
+            const e = this._storages[i].getById(entity.uuid);
+            if(e) {
+                this._storages[i].remove(e);
+                break;
+            }
+        }
+        
+        return entity;
+    }
+
     getById(id: string): TEntity {
         return this.entities.find(entity => entity.uuid === id);
     }

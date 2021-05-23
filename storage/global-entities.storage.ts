@@ -39,4 +39,12 @@ export default class GlobalEntitiesStorage {
         return combinedStorage;
     }
 
+    public static destroy(key: string): void {
+        this._storages.delete(key);
+    }
+        
+    public static clearAll(): void {
+        this._storages = new Map();
+    }
+
 }
